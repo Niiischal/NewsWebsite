@@ -1,15 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
     const headerStyles = {
-        position: 'absolute',
+        position: 'fixed',
         top: 0,
         left: 0,
         width: '100%',
-        padding: '20px 80px',
+        padding: '20px',
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent:'space-evenly',
         alignItems: 'center',
       };
 
@@ -30,16 +31,14 @@ const Navbar = () => {
 
       const li={
         listStyle: 'none',
-        marginLeft: '20px'
       }
 
       const a={
         textDecoration:'none',
-        padding:'6px 15px',
+        padding:'6px 20px',
         color:'#fff',
         borderRadius: '20px',
       }
-
       
   return (
 <>
@@ -47,29 +46,28 @@ const Navbar = () => {
     <a href="/" className='Logo' style={logoStyles}>ThePressSite</a>
     <ul style={ul}>
         <li style={li}>
-            <div>
-            <a href="/" style={a}>Home</a>
-            </div>
+            <Link to="/" style={a}>Home</Link>
         </li>
         <li style={li}>
-            <div>
-            <a href="/general" style={a}>General</a>
-            </div>
+            <Link to="/" style={a}>General</Link>
         </li>
         <li style={li}>
-            <div>
-            <a href="/business" style={a}>Business</a>
-            </div>
+            <Link to="/" style={a}>Business</Link>
         </li>
         <li style={li}>
-            <div>
-            <a href="/entertainment" style={a}>Entertainment</a>
-            </div>
+            <Link to="/" style={a}>Entertainment</Link>
         </li>
         <li style={li}>
-            <div>
-            <a href="/sports" style={a}>Sports</a>
-            </div>
+            <Link to="/" style={a}>Sports</Link>
+        </li>
+        <li style={li}>
+            <Link to="/" style={a}>Health</Link>
+        </li>
+        <li style={li}>
+            <Link to="/" style={a}>Science</Link>
+        </li>
+        <li style={li}>
+            <Link to="/" style={a}>Technology</Link>
         </li>
     </ul>
 </header>
