@@ -9,9 +9,9 @@ const News = (props) => {
     const[totalResults,setTotalResults ]=useState(0)
 
     const getNews=async()=>{
-    const apiUrl=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey="be2b80dca83446cdbd2c2edf1471245b"&page=${page}`
-    let data = await fetch(apiUrl)
-    let parsedData = await data.json()
+    const apiUrl=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=be2b80dca83446cdbd2c2edf1471245b&page=${page}`
+    let results = await fetch(apiUrl)
+    let parsedData = await results.json()
     setArticles(parsedData.articles)
     setTotalResults(parsedData.totalResults)
     }
@@ -36,13 +36,11 @@ const News = (props) => {
 {/* Aligning all the cards in row */}
 <div className="container">
 <div className="row">
-    <div className="col-md-4">
     {articles?.map((element)=>{
-            return <div className="col-md-4" key={element.url}>
+            return <div className="col-md-3" key={element.url}>
     <NewsItems title={element.title} description={element.description} publishedTime={element.publishedAt} author={element.author} image={element.urlToImage} newUrl={element.url}/>
     </div>
     })}
-</div>
 </div>
 </div>
 </>
