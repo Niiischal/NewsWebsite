@@ -6,8 +6,17 @@ import NewsItems from './NewsItems'
 const News = () => {
   return (
 <>
-<h1 className='text-center'style={{padding:'20px'}} >Get News By Categories: </h1>
-<NewsItems/>
+<h1 className='text-center'style={{padding:'20px'}} > Headlines</h1>
+
+{/* Aligning all the cards in row */}
+<div className="container">
+<div className="row">
+    <div className="col-md-4">
+    <NewsItems title="Heading" description="News" publishedTime="Now" author="Me" image="" />
+    </div>
+</div>
+</div>
+
 </>
   )
 }
