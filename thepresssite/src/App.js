@@ -7,13 +7,13 @@ import Navbar from './components/Navbar';
 import News from './components/News';
 
 function App() {
-  let apiKey=process.env.REACT_APP_NEWSAPI
+  let apiKey=process.env.REACT_APP_NEWS_API
   return (
 <>
 <Router>
 <Navbar/>
 {/* <Home/> */}
-<News/>
+<News apiKey={apiKey} key="general"  country="us" category="general"/>
 </Router>
 </>
   );
