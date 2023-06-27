@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import '../style.css';
 
 const Navbar = () => {
 
@@ -46,56 +47,56 @@ const Navbar = () => {
     <a href="/" className='Logo' style={logoStyles}>ThePressSite</a>
     <ul style={ul}>
         <li style={li}>
-            <NavLink to="/" style={({ isActive }) => ({
+            <NavLink to="/" className="links" style={({ isActive }) => ({
     ...a,
     color: isActive ? '#2b1055' : '#fff',
     background: isActive ? '#fff' : '',
   })}>Home</NavLink>
         </li>
         <li style={li}>
-            <NavLink to="/general" style={({ isActive }) => ({
+            <NavLink to="/general" className="links" style={({ isActive }) => ({
     ...a,
     color: isActive ? '#2b1055' : '#fff',
     background: isActive ? '#fff' : '',
   })}>General</NavLink>
         </li>
         <li style={li}>
-            <NavLink to="/business" style={({ isActive }) => ({
+            <NavLink to="/business" className="links" style={({ isActive }) => ({
     ...a,
     color: isActive ? '#2b1055' : '#fff',
     background: isActive ? '#fff' : '',
   })}>Business</NavLink>
         </li>
         <li style={li}>
-            <NavLink to="/entertainment" style={({ isActive }) => ({
+            <NavLink to="/entertainment" className="links" style={({ isActive }) => ({
     ...a,
     color: isActive ? '#2b1055' : '#fff',
     background: isActive ? '#fff' : '',
   })}>Entertainment</NavLink>
         </li>
         <li style={li}>
-            <NavLink to="/sports" style={({ isActive }) => ({
+            <NavLink to="/sports" className="links" style={({ isActive }) => ({
     ...a,
     color: isActive ? '#2b1055' : '#fff',
     background: isActive ? '#fff' : '',
   })}>Sports</NavLink>
         </li>
         <li style={li}>
-            <NavLink to="/health" style={({ isActive }) => ({
+            <NavLink to="/health" className="links" style={({ isActive }) => ({
     ...a,
     color: isActive ? '#2b1055' : '#fff',
     background: isActive ? '#fff' : '',
   })}>Health</NavLink>
         </li>
         <li style={li}>
-            <NavLink to="/science" style={({ isActive }) => ({
+            <NavLink to="/science" className="links" style={({ isActive }) => ({
     ...a,
     color: isActive ? '#2b1055' : '#fff',
     background: isActive ? '#fff' : '',
   })}>Science</NavLink>
         </li>
         <li style={li}>
-            <NavLink to="/technology" style={({ isActive }) => ({
+            <NavLink to="/technology" className="links" style={({ isActive }) => ({
     ...a,
     color: isActive ? '#2b1055' : '#fff',
     background: isActive ? '#fff' : '',

@@ -1,0 +1,14 @@
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+
+  ul {
+    flex-direction: column;
+    display: none;
+  }
+
+  ul.open {
+    display: block;
+  }
+}
