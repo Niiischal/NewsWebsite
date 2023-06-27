@@ -5,7 +5,7 @@ import '../style.css';
 const Navbar = () => {
 
     const headerStyles = {
-        position: 'fixed',
+        position: 'relative',
         top: 0,
         left: 0,
         width: '100%',
