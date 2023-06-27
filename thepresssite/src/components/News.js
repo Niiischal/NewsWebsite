@@ -1,9 +1,9 @@
 import React from 'react'
 import NewsItems from './NewsItems'
 
+const News = (props) => {
 
-// https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=90c71cea048a4c9f9714415dd37eb9cc
-const News = () => {
+    const apiUrl=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}`
   return (
 <>
 <h1 className='text-center'style={{padding:'20px'}} > Headlines</h1>

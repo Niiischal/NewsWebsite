@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import News from './components/News';
 
 function App() {
+  let apiKey=process.env.REACT_APP_NEWSAPI
   return (
 <>
 <Router>
