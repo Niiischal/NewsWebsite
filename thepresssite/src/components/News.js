@@ -29,7 +29,6 @@ const News = (props) => {
   }
 
     useEffect(() =>{
-      document.title=`ThePressSite- ${capitalizeFirstLetter(props.category)} `
         getNews();
     },[])
 
