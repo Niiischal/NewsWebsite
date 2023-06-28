@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import NewsItems from './NewsItems'
+import Spinner from './Spinner'
 
 const News = (props) => {
 
@@ -36,6 +37,7 @@ const News = (props) => {
 <>
 <h1 className='text-center'style={{padding:'20px'}} > Headlines: {capitalizeFirstLetter(props.category)}</h1>
 
+{loading && <Spinner/>}
 {/* Aligning all the cards in row */}
 <div className="container">
 <div className="row">
