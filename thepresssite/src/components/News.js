@@ -8,29 +8,30 @@ const News = (props) => {
     const[totalResults,setTotalResults ]=useState(0)
 
     const getNews=async()=>{
+    props.setProgress(20)
     const apiUrl=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=be2b80dca83446cdbd2c2edf1471245b&page=${page}`
+    props.setProgress(50)
     let results = await fetch(apiUrl)
+    props.setProgress(70)
     let parsedData = await results.json()
     setArticles(parsedData.articles)
     setTotalResults(parsedData.totalResults)
+    props.setProgress(100)
     }
 
+    const capitalizeFirstLetter =(string)=> {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
     useEffect(() =>{
+      document.title=`ThePressSite- ${capitalizeFirstLetter(props.category)} `
         getNews();
     },[])
 
-    // const fetchMoreData = async () => {
-    //     const url=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page+1}`
-    //     setPage(page+1)
-    //     let data = await fetch(url);// fetching the url
-    //     let parsedData = await data.json()// waiting for it to change into json
-    //     setArticles(articles.concat(parsedData.articles))
-    //     setTotalResults(parsedData.totalResults)
-    //   };
 
   return (
 <>
-<h1 className='text-center'style={{padding:'20px'}} > Headlines: {props.category}</h1>
+<h1 className='text-center'style={{padding:'20px'}} > Headlines: {capitalizeFirstLetter(props.category)}</h1>
 
 {/* Aligning all the cards in row */}
 <div className="container">
