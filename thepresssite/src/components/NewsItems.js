@@ -8,7 +8,7 @@ const NewsItems = (props) => {
         <div className="card">
         <div><span class="badge rounded-pill bg-danger" style={{display:'flex', justifyContent:'center', position:"absolute"}}>{source}</span>
           </div>
-          <img src={!image?"https://i.ytimg.com/vi/Jvpt-3VaIH0/maxresdefault.jpg":image}
+          <img src={!image?"https://media.cnn.com/api/v1/images/stellar/prod/230626103914-rome-colosseum-carving-file.jpg?c=16x9&q=w_800,c_fill":image}
            className="card-img-top" alt="..."/>
             <div className="card-body">
               <h3 className="card-title fs-3 my-2" >{title}...</h3>
