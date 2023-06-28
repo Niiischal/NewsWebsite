@@ -5,17 +5,20 @@ const News = (props) => {
 
     const[articles, setArticles]=useState([])
     const[page,setPage ]=useState(1)
+    const[loading,setLoading]=useState(true)
     const[totalResults,setTotalResults ]=useState(0)
 
     const getNews=async()=>{
     props.setProgress(20)
     const apiUrl=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=be2b80dca83446cdbd2c2edf1471245b&page=${page}`
-    props.setProgress(50)
+    setLoading(true)
     let results = await fetch(apiUrl)
-    props.setProgress(70)
+    props.setProgress(50)
     let parsedData = await results.json()
+    props.setProgress(50)
     setArticles(parsedData.articles)
     setTotalResults(parsedData.totalResults)
+    setLoading(false)
     props.setProgress(100)
     }
 
@@ -38,7 +41,7 @@ const News = (props) => {
 <div className="row">
     {articles && articles.map((element)=>{
             return <div className="col-md-4" key={element.url}>
-    <NewsItems title={element.title && element.title.slice(0,70)} description={element.description && element.description.slice(0,120)} publishedTime={element.publishedAt} author={element.author} image={element.urlToImage} newsUrl={element.url}/>
+    <NewsItems title={element.title && element.title.slice(0,70)} description={element.description && element.description.slice(0,120)} publishedTime={element.publishedAt} author={element.author} image={element.urlToImage} newsUrl={element.url} source={element.source.name}/>
     </div>
     })}
 </div>
