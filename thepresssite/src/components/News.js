@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import NewsItems from './NewsItems'
 
@@ -36,9 +35,9 @@ const News = (props) => {
 {/* Aligning all the cards in row */}
 <div className="container">
 <div className="row">
-    {articles?.map((element)=>{
-            return <div className="col-md-3" key={element.url}>
-    <NewsItems title={element.title} description={element.description} publishedTime={element.publishedAt} author={element.author} image={element.urlToImage} newUrl={element.url}/>
+    {articles && articles.map((element)=>{
+            return <div className="col-md-4" key={element.url}>
+    <NewsItems title={element.title && element.title.slice(0,70)} description={element.description && element.description.slice(0,120)} publishedTime={element.publishedAt} author={element.author} image={element.urlToImage} newsUrl={element.url}/>
     </div>
     })}
 </div>
@@ -49,8 +48,3 @@ const News = (props) => {
 
 export default News
 
-News.propTypes = {
-    country: PropTypes.string,
-    pageSize: PropTypes.number,
-    category: PropTypes.string
-  }

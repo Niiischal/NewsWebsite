@@ -8,10 +8,10 @@ const NewsItems = (props) => {
         <div className="card">
           <img src={!image?"https://i.ytimg.com/vi/Jvpt-3VaIH0/maxresdefault.jpg":image} className="card-img-top" alt="..."/>
             <div className="card-body">
-              <h3 className="card-title fs-2">{title}</h3>
-              <p className="card-text">{description}</p>
-              <p className="card-text"><small className="text-body-secondary">By: {!author?"Unknown" :author} on {new Date(publishedTime).toGMTString()}</small></p>
-              <a href={newsUrl} className="btn btn-sm btn-dark">Read More</a>
+              <h3 className="card-title fs-3 my-2" >{title}...</h3>
+              <p className="card-text my-2">{description}..</p>
+              <p className="card-text my-2"><small className="text-body-secondary">By: {!author?"Unknown" :author} on {new Date(publishedTime).toGMTString()}</small></p>
+              <a href={newsUrl} target="_blank" className="btn btn-lg" style={{background:"linear-gradient(#3a235e, #2c4d95),", color:"#fff"}}>Read More</a>
             </div>
        </div>
       </div>
