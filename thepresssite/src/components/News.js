@@ -12,9 +12,9 @@ const News = (props) => {
 
     const getNews=async()=>{
     props.setProgress(20)
-    const apiUrl=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}`
+    const apiUrl=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=be2b80dca83446cdbd2c2edf1471245b&page=${page}`
     setLoading(true)
-    let results = await fetch (apiUrl)
+    let results = await fetch(apiUrl)
     props.setProgress(50)
     let parsedData = await results.json()
     props.setProgress(50)
@@ -34,7 +34,7 @@ const News = (props) => {
     },[])
 
     const fetchMoreNews=async()=>{
-      const apiUrl=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}`
+      const apiUrl=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=be2b80dca83446cdbd2c2edf1471245b&page=${page}`
       setPage(page+1)
       let results = await fetch(apiUrl)
       let parsedData = await results.json()
@@ -46,7 +46,6 @@ const News = (props) => {
   return (
 <>
 <h1 className='text-center'style={{padding:'20px'}} > Headlines: {capitalizeFirstLetter(props.category)}</h1>
-
 {loading && <Spinner/>}
 <InfiniteScroll
           dataLength={articles.length}
