@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import NewsItems from './NewsItems'
-import Spinner from './Spinner'
+import React, { useEffect, useState } from 'react';
+import InfiniteScroll from "react-infinite-scroll-component";
+import NewsItems from './NewsItems';
+import Spinner from './Spinner';
 
 const News = (props) => {
 
@@ -32,12 +33,28 @@ const News = (props) => {
         getNews();
     },[])
 
+    const fetchMoreNews=async()=>{
+      const apiUrl=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=be2b80dca83446cdbd2c2edf1471245b&page=${page}`
+      setPage(page+1)
+      let results = await fetch(apiUrl)
+      let parsedData = await results.json()
+      setArticles(articles.concat(parsedData.articles))
+      setTotalResults(parsedData.totalResults)
+    }
+
 
   return (
 <>
 <h1 className='text-center'style={{padding:'20px'}} > Headlines: {capitalizeFirstLetter(props.category)}</h1>
 
 {loading && <Spinner/>}
+<InfiniteScroll
+          dataLength={articles.length}
+          next={fetchMoreNews}
+          hasMore={articles.length!==totalResults}
+          loader={<Spinner/>}
+        >
+
 {/* Aligning all the cards in row */}
 <div className="container">
 <div className="row">
@@ -48,6 +65,7 @@ const News = (props) => {
     })}
 </div>
 </div>
+</InfiniteScroll>
 </>
   )
 }
