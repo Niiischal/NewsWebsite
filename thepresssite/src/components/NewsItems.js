@@ -14,7 +14,9 @@ const NewsItems = (props) => {
               <h3 className="card-title fs-3 my-2" >{title}...</h3>
               <p className="card-text my-2">{description}..</p>
               <p className="card-text my-2"><small className="text-body-secondary">By: {!author?"Unknown" :author} on {new Date(publishedTime).toGMTString()}</small></p>
-              <a href={newsUrl} target="_blank" className="btn btn-lg" style={{background:"linear-gradient(#3a235e, #2c4d95),", color:"#fff"}}>Read More</a>
+              <div className="d-flex justify-content-end">
+              <a href={newsUrl} className="btn btn-lg" style={{background:"red", color:"#fff"}}>Read More</a>
+              </div>
             </div>
        </div>
       </div>
