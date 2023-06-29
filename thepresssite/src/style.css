@@ -1,40 +1,6 @@
-@media (max-width: 768px) {
-  .header {
-    flex-direction: row;
-  }
-
-  ul {
-    flex-direction: column;
-    display: none;
-    font-size: 1rem;
-  }
-
-  ul.open {
-    display: block;
-  }
-
-  .desc{
-    position: relative;
-    padding: 100px;
-  }
-  
-}
-
-.desc{
-    position: relative;
-    padding: 160px;
-}
-
-.desc p{
-    font-size: 1rem;
-    color: #fff;
-}
 
 .text-center{
     color: #fff;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
-.navbar-toggler-icon {
-  color: white;
-}
