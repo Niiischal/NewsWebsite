@@ -34,3 +34,7 @@
     color: #fff;
     font-size: 2rem;
 }
+
+.navbar-toggler-icon {
+  color: white;
+}

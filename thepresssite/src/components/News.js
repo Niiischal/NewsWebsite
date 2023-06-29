@@ -44,13 +44,13 @@ const News = (props) => {
 
   return (
 <>
-<h1 className='text-center'style={{padding:'20px'}} > Headlines: {capitalizeFirstLetter(props.category)}</h1>
+<h1 className='text-center'style={{marginTop:'100px'}} > Headlines: {capitalizeFirstLetter(props.category)}</h1>
 {loading && <Spinner/>}
 <InfiniteScroll
-          dataLength={articles.length}
-          next={fetchMoreNews}
-          hasMore={articles.length!==totalResults}
-          loader={<Spinner/>}
+  dataLength={articles ? articles.length : 0}
+  next={fetchMoreNews}
+  hasMore={articles ? articles.length !== totalResults : false}
+  loader={<Spinner />}
         >
 
 {/* Aligning all the cards in row */}
