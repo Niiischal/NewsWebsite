@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import Footer from './Footer'
 
 const Navbar1 = () => {
     const navNames={
@@ -68,6 +69,7 @@ const Navbar1 = () => {
   })}>Technology</NavLink>
           </li>
         </ul>
+        <Footer/>
       </div>
     </div>
   </div>
