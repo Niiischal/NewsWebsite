@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import InfiniteScroll from "react-infinite-scroll-component";
+import '../style.css';
 import NewsItems from './NewsItems';
 import Spinner from './Spinner';
 
@@ -44,7 +45,7 @@ const News = (props) => {
 
   return (
 <>
-<h1 className='text-center' style={{marginTop:'100px', color:'#fff', fontSize:'2rem'}} > Headlines: {capitalizeFirstLetter(props.category)}</h1>
+<h1 className='text-center' style={{marginTop:'80px', color:'#fff', fontSize:'2rem'}} > Headlines: {capitalizeFirstLetter(props.category)}</h1>
 {loading && <Spinner/>}
 <InfiniteScroll
   dataLength={articles ? articles.length : 0}
