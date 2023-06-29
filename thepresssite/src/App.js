@@ -6,7 +6,7 @@ import {
 import LoadingBar from 'react-top-loading-bar';
 import './App.css';
 import Home from "./components/Home";
-import Navbar1 from './components/Navbar1';
+import Navbar from './components/Navbar';
 import News from './components/News';
 function App() {
   let apiKey=process.env.REACT_APP_NEWS_API
@@ -14,7 +14,7 @@ function App() {
   return (
 <>
 <Router>
-<Navbar1/>
+<Navbar/>
 <LoadingBar color='Red' height={3} progress= {progress}/>
 <Routes>
   <Route exact path='/' element={<Home/>}/>

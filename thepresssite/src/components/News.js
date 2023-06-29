@@ -44,7 +44,7 @@ const News = (props) => {
 
   return (
 <>
-<h1 className='text-center'style={{marginTop:'100px', color:'#fff', fontSize:'2rem'}} > Headlines: {capitalizeFirstLetter(props.category)}</h1>
+<h1 className='text-center' style={{marginTop:'100px', color:'#fff', fontSize:'2rem'}} > Headlines: {capitalizeFirstLetter(props.category)}</h1>
 {loading && <Spinner/>}
 <InfiniteScroll
   dataLength={articles ? articles.length : 0}
@@ -57,7 +57,7 @@ const News = (props) => {
 <div className="container">
 <div className="row">
     {articles && articles.map((element)=>{
-            return <div className="col-md-4" key={element.url}>
+            return <div className="col-md-6" key={element.url}>
     <NewsItems title={element.title && element.title.slice(0,70)} description={element.description && element.description.slice(0,120)} publishedTime={element.publishedAt} author={element.author} image={element.urlToImage} newsUrl={element.url} source={element.source.name}/>
     </div>
     })}

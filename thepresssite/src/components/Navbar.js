@@ -1,111 +1,79 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import '../style.css';
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 
-const Navbar = () => {
-
-    const headerStyles = {
-        position: 'relative',
-        top: 0,
-        left: 0,
-        width: '100%',
-        padding: '20px',
-        display: 'flex',
-        justifyContent:'space-evenly',
-        alignItems: 'center',
-      };
-
-      const logoStyles = {
-        color: '#fff',
-        fontWeight: 700,
-        textDecoration: 'none',
-        fontSize: '2em',
-        letterSpacing: '2px',
-      };
-
-      const ul={
-        display:'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-
-      }
-
-      const li={
-        listStyle: 'none',
-      }
-
-      const a={
-        textDecoration:'none',
-        padding:'6px 20px',
-        color:'#fff',
-        borderRadius: '20px',
-      }
-      
+const Navbar1 = () => {
+    const navNames={
+        padding:'10px',
+        textAlign:'center',
+        fontSize:'1rem',
+    }
+    
+    const navNames1={
+        padding:'15px',
+        textAlign:'center',
+        fontSize:'1rem',
+    }
   return (
-<>
-<header style={headerStyles}>
-    <a href="/" className='Logo' style={logoStyles}>ThePressSite</a>
-    <ul style={ul}>
-        <li style={li}>
-            <NavLink to="/" className="links" style={({ isActive }) => ({
-    ...a,
-    color: isActive ? '#2b1055' : '#fff',
-    background: isActive ? '#fff' : '',
+    <div>
+      <nav className="navbar fixed-top">
+  <div className="container-fluid" >
+    <a className="navbar-brand" href="#" style={{color:'#fff', fontWeight:'700', letterSpacing:'2.5px'}}>ThePressSite</a>
+    <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation" style={{backgroundColor:'#fff'}}>
+      <span className="navbar-toggler-icon" style={{color:"white"}}></span>
+    </button>
+    <div className="offcanvas offcanvas-end text-bg-dark" tabIndex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div className="offcanvas-header">
+        <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel" style={{color:'#fff', fontWeight:'700', letterSpacing:'2.5px', fontSize:'1.3rem'}}>Navigation</h5>
+      </div>
+      <div className="offcanvas-body">
+        <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li className="nav-item" style={navNames}>
+          <NavLink to="/" className="links" style={({ isActive }) => ({
+    color: isActive ? 'red' : '#fff',
   })}>Home</NavLink>
-        </li>
-        <li style={li}>
-            <NavLink to="/general" className="links" style={({ isActive }) => ({
-    ...a,
-    color: isActive ? '#2b1055' : '#fff',
-    background: isActive ? '#fff' : '',
+          </li>
+          <li className="nav-item" style={navNames1}>
+          <NavLink to="/general" className="links" style={({ isActive }) => ({
+    color: isActive ? 'red' : '#fff',
   })}>General</NavLink>
-        </li>
-        <li style={li}>
-            <NavLink to="/business" className="links" style={({ isActive }) => ({
-    ...a,
-    color: isActive ? '#2b1055' : '#fff',
-    background: isActive ? '#fff' : '',
+          </li>
+          <li className="nav-item" style={navNames1}>
+          <NavLink to="/business" className="links" style={({ isActive }) => ({
+    color: isActive ? 'red' : '#fff',
   })}>Business</NavLink>
-        </li>
-        <li style={li}>
-            <NavLink to="/entertainment" className="links" style={({ isActive }) => ({
-    ...a,
-    color: isActive ? '#2b1055' : '#fff',
-    background: isActive ? '#fff' : '',
+          </li>
+          <li className="nav-item" style={navNames1}>
+          <NavLink to="/entertainment" className="links" style={({ isActive }) => ({
+    color: isActive ? 'red' : '#fff',
   })}>Entertainment</NavLink>
-        </li>
-        <li style={li}>
-            <NavLink to="/sports" className="links" style={({ isActive }) => ({
-    ...a,
-    color: isActive ? '#2b1055' : '#fff',
-    background: isActive ? '#fff' : '',
+          </li>
+          <li className="nav-item" style={navNames1}>
+          <NavLink to="/sports" className="links" style={({ isActive }) => ({
+    color: isActive ? 'red' : '#fff',
   })}>Sports</NavLink>
-        </li>
-        <li style={li}>
-            <NavLink to="/health" className="links" style={({ isActive }) => ({
-    ...a,
-    color: isActive ? '#2b1055' : '#fff',
-    background: isActive ? '#fff' : '',
+          </li>
+          <li className="nav-item" style={navNames1}>
+          <NavLink to="/health" className="links" style={({ isActive }) => ({
+    color: isActive ? 'red' : '#fff',
   })}>Health</NavLink>
-        </li>
-        <li style={li}>
-            <NavLink to="/science" className="links" style={({ isActive }) => ({
-    ...a,
-    color: isActive ? '#2b1055' : '#fff',
-    background: isActive ? '#fff' : '',
+          </li>
+          <li className="nav-item" style={navNames1}>
+          <NavLink to="/science" className="links" style={({ isActive }) => ({
+    color: isActive ? 'red' : '#fff',
   })}>Science</NavLink>
-        </li>
-        <li style={li}>
-            <NavLink to="/technology" className="links" style={({ isActive }) => ({
-    ...a,
-    color: isActive ? '#2b1055' : '#fff',
-    background: isActive ? '#fff' : '',
+          </li>
+          <li className="nav-item" style={navNames1}>
+          <NavLink to="/technology" className="links" style={({ isActive }) => ({
+    color: isActive ? 'red' : '#fff',
   })}>Technology</NavLink>
-        </li>
-    </ul>
-</header>
-</>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+    </div>
   )
 }
 
-export default Navbar
+export default Navbar1
