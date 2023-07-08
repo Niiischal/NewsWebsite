@@ -1,12 +1,10 @@
 @media (max-width: 768px) {
-    .header {
-      flex-direction: row;
-    }
-    
+  .header {
+    flex-direction: row;
   }
-  
-  
-  .text-center{
-      color: #fff;
-      font-size: 2rem;
-  }
+}
+
+.text-center {
+  color: #fff;
+  font-size: 2rem;
+}

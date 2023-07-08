@@ -5,7 +5,6 @@ import {
 } from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar';
 import './App.css';
-import Home from "./components/Home";
 import Navbar from './components/Navbar';
 import News from './components/News';
 function App() {
@@ -17,8 +16,7 @@ function App() {
 <Navbar/>
 <LoadingBar color='Red' height={3} progress= {progress}/>
 <Routes>
-  <Route exact path='/' element={<Home/>}/>
-  <Route exact path='/home' element={<Home/>}/>
+  <Route exact path='/' element={<News key="general"  country="us" category="general" setProgress={setProgress}/>}/>
   <Route exact path='/general' element={<News key="general"  country="us" category="general" setProgress={setProgress}/>}/>
   <Route exact path='/business' element={<News key="business"  country="us" category="business" setProgress={setProgress}/>}/>
   <Route exact path='/entertainment' element={<News key="entertainment"  country="us" category="entertainment" setProgress={setProgress}/>}/>
