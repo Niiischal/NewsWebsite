@@ -8,3 +8,7 @@
   color: #fff;
   font-size: 2rem;
 }
+
+.medias>i:hover{
+  color: #ffc107;
+}
